@@ -1,0 +1,9 @@
+img {
+    max-width: 100%;
+}
+
+.ms-container {
+    max-width: 1200px;
+    width: 70%;
+    margin: 0 auto;
+}
