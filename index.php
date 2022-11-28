@@ -54,27 +54,37 @@ $hotels = [
     <main class="text-center">
         <div class="ms-container">
             <h1>I nostri hotels!</h1>
-            <?php
-            for ($i = 0; $i < count($hotels); $i++) {
-                $single_hotel = $hotels[$i];
-            }
-            ?>
             <table class="table">
                 <thead>
                     <tr class="table-primary">
-                        <?php
-                        foreach ($single_hotel as $key => $value) {
-                            echo "<th scope='col'>" . $key . "<th/>";
-                        } ?>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Parcheggio</th>
+                        <th scope="col">Voto</th>
+                        <th scope="col">Distanza</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="table-info">
-                        <?php
-                        foreach ($single_hotel as $key => $value) {
-                            echo "<td scope='col'>" . $value . "<td/>";
-                        } ?>
-                    </tr>
+                    <?php
+                    foreach ($hotels as $hotel) { ?>
+                        <tr class="table-info">
+                            <th scope="row">
+                                <?php echo $hotel["name"]; ?>
+                            </th>
+                            <td scope="row">
+                                <?php echo $hotel["description"]; ?>
+                            </td>
+                            <td scope="row">
+                                <?php echo $hotel["parking"] ? "Sì" : "No"; ?>
+                            </td>
+                            <td scope="row">
+                                <?php echo $hotel["vote"]; ?>
+                            </td>
+                            <td scope="row">
+                                <?php echo $hotel["distance_to_center"] . "km"; ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
